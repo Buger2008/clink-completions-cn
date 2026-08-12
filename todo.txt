@@ -1,0 +1,43 @@
+# 待补全的 Windows 可用 CLI（全中文提示）
+# Tier 1 = 本机已安装但缺补全；Tier 2 = Windows 内置命令缺补全
+# 完成一个勾选一个（[x]）— 全部完成 ✅
+
+## Tier 1 本机已安装
+- [x] 7z.lua           # 7-Zip 压缩
+- [x] pwsh.lua         # PowerShell 7
+- [x] cmake.lua        # CMake 构建系统
+- [x] ninja.lua        # Ninja 构建工具
+- [x] gcc.lua          # gcc/g++（MinGW 工具链）
+- [x] vim.lua          # Vim 编辑器
+- [x] unzip.lua        # GNU unzip
+- [x] tar.lua          # GNU tar
+- [x] git-lfs.lua      # Git Large File Storage
+- [x] npx.lua          # npm 包执行器
+- [x] nslookup.lua     # DNS 查询
+
+## Tier 2 Windows 内置命令
+- [x] ipconfig.lua     # 网络配置
+- [x] netstat.lua      # 网络连接/端口
+- [x] tracert.lua      # 路由追踪
+- [x] route.lua        # 路由表
+- [x] netsh.lua        # 网络脚本
+- [x] getmac.lua       # MAC 地址
+- [x] tasklist.lua     # 进程列表
+- [x] taskkill.lua     # 结束进程
+- [x] schtasks.lua     # 计划任务
+- [x] shutdown.lua     # 关机/重启
+- [x] systeminfo.lua   # 系统信息
+- [x] sc.lua           # 服务控制
+- [x] tree.lua         # 目录树
+- [x] icacls.lua       # 文件 ACL
+- [x] takeown.lua      # 获取所有权
+- [x] subst.lua        # 虚拟盘符
+- [x] setx.lua         # 持久环境变量
+- [x] fc.lua           # 文件比较
+- [x] comp.lua         # 文件比较(二进制)
+- [x] cipher.lua       # 加密/EFS
+- [x] compact.lua      # NTFS 压缩
+- [x] chkdsk.lua       # 磁盘检查
+- [x] diskpart.lua     # 磁盘分区
+- [x] powercfg.lua     # 电源配置
+- [x] sfc.lua          # 系统文件检查

@@ -21,8 +21,10 @@ clink.argmatcher("date")
     ["--utc"] = { "以 UTC 时间显示或设置" },
     ["--universal"] = { "以 UTC 时间显示或设置" },
     ["--rfc-3339"] = { " precision", "以 RFC 3339 格式输出，可选精度：date, seconds, ns" },
+    ["--rfc-email"] = { "以 RFC 5322 电子邮件日期格式输出" },
     ["-s"] = { " string", "设置系统日期和时间" },
     ["--set"] = { " string", "设置系统日期和时间" },
+    ["--debug"] = { "调试解析的日期字符串并退出" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -38,7 +40,9 @@ clink.argmatcher("date")
     "--reference="..clink.filematches,
     "-u", "--utc", "--universal",
     "--rfc-3339="..rfc3339_matcher,
+    "--rfc-email",
     "-s"..(clink.argmatcher():addarg({fromhistory=true})),
     "--set="..(clink.argmatcher():addarg({fromhistory=true})),
+    "--debug",
     "--help", "--version",
 })

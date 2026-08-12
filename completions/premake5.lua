@@ -120,7 +120,17 @@ local function delayinit(argmatcher)
 
     r:close()
 
-    argmatcher:addarg(actions or {})
+    actions = actions or {}
+    actions.onarg = function()
+        -- 解析过程中 cwd 变化时强制重新 delayinit，
+        -- 使 premake5 补全能配合 clink-gizmos 的 i.lua 正常工作。
+        local onarg_cwd = os.getcwd()
+        if onarg_cwd ~= prev_cwd then
+            delayinit(argmatcher)
+        end
+    end
+
+    argmatcher:addarg(actions)
     argmatcher:addflags(flags)
     argmatcher:adddescriptions(descriptions)
 end

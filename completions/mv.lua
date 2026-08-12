@@ -21,6 +21,10 @@ clink.argmatcher("mv")
     ["-b"] = { "备份每个现有的目标文件" },
     ["--backup"] = { "备份每个现有的目标文件" },
     ["--strip-trailing-slashes"] = { "从每个源参数中移除尾随斜杠" },
+    ["-S"] = { " suffix", "覆盖默认的备份后缀" },
+    ["--suffix"] = { " suffix", "覆盖默认的备份后缀" },
+    ["-Z"] = { "设置目标文件的 SELinux 安全上下文" },
+    ["--context"] = { "设置目标文件的 SELinux 安全上下文" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -35,5 +39,8 @@ clink.argmatcher("mv")
     "--target-directory="..(clink.argmatcher():addarg(clink.dirmatches)),
     "-b", "--backup",
     "--strip-trailing-slashes",
+    "-S"..(clink.argmatcher():addarg({fromhistory=true})),
+    "--suffix="..(clink.argmatcher():addarg({fromhistory=true})),
+    "-Z", "--context",
     "--help", "--version",
 })

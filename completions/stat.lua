@@ -13,6 +13,9 @@ clink.argmatcher("stat")
     ["--dereference"] = { "跟随符号链接" },
     ["-t"] = { "以简洁（一行）格式输出" },
     ["--terse"] = { "以简洁（一行）格式输出" },
+    ["--cached"] = { " mode", "指定如何使用缓存属性：never, always, auto" },
+    ["--printf"] = { " format", "类似 --format，但解释反斜杠转义" },
+    ["--append-exe"] = { "需要时追加 .exe（cygwin 特定）" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -22,5 +25,8 @@ clink.argmatcher("stat")
     "-f", "--file-system",
     "-L", "--dereference",
     "-t", "--terse",
+    "--cached="..(clink.argmatcher():addarg({"never", "always", "auto"})),
+    "--printf="..(clink.argmatcher():addarg({fromhistory=true})),
+    "--append-exe",
     "--help", "--version",
 })

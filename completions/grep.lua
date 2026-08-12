@@ -20,6 +20,7 @@ clink.argmatcher("grep")
     ["-c"] = { "仅打印每个文件的匹配行数" },
     ["--count"] = { "仅打印每个文件的匹配行数" },
     ["--color"] = { " arg", "使用颜色高亮匹配文本：auto, always, never" },
+    ["--colour"] = { " arg", "使用颜色高亮匹配文本（--color 的英式拼写）：auto, always, never" },
     ["-l"] = { "仅打印有匹配的文件名" },
     ["--files-with-matches"] = { "仅打印有匹配的文件名" },
     ["-L"] = { "仅打印无匹配的文件名" },
@@ -59,6 +60,8 @@ clink.argmatcher("grep")
     ["-a"] = { "将二进制文件视为文本文件处理" },
     ["--text"] = { "将二进制文件视为文本文件处理" },
     ["--binary-files"] = { " type", "二进制文件的处理方式：binary, text, without-match" },
+    ["-u"] = { "报告偏移量时视 CR 不存在（Unix 字节偏移）" },
+    ["--unix-byte-offsets"] = { "报告偏移量时视 CR 不存在（Unix 字节偏移）" },
     ["-D"] = { " action", "设备/FIFO/套接字的处理方式：read, skip" },
     ["--devices"] = { " action", "设备/FIFO/套接字的处理方式：read, skip" },
     ["-d"] = { " action", "目录的处理方式：read, recurse, skip" },
@@ -69,6 +72,7 @@ clink.argmatcher("grep")
     ["--dereference-recursive"] = { "递归搜索目录，跟随所有符号链接" },
     ["--include"] = { " glob", "仅搜索匹配 glob 模式的文件" },
     ["--exclude"] = { " glob", "跳过匹配 glob 模式的文件" },
+    ["--exclude-from"] = { " file", "跳过匹配 FILE 中任何文件模式的文件" },
     ["--exclude-dir"] = { " glob", "跳过匹配 glob 模式的目录" },
     ["--include-dir"] = { " glob", "仅搜索匹配 glob 模式的目录" },
     -- Regex type selection
@@ -93,6 +97,7 @@ clink.argmatcher("grep")
     ["--binary"] = { "将文件视为二进制文件" },
     ["-z"] = { "用 NUL 字节终止行" },
     ["--null-data"] = { "用 NUL 字节终止行" },
+    ["-V"] = { "显示版本信息并退出" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -105,6 +110,7 @@ clink.argmatcher("grep")
     -- General output
     "-c", "--count",
     "--color"..(clink.argmatcher():addarg({"auto", "always", "never"})),
+    "--colour"..(clink.argmatcher():addarg({"auto", "always", "never"})),
     "-l", "--files-with-matches",
     "-L", "--files-without-match",
     "-m"..num_arg, "--max-count="..num_arg,
@@ -126,6 +132,7 @@ clink.argmatcher("grep")
     -- File/directory selection
     "-a", "--text",
     "--binary-files=",
+    "-u", "--unix-byte-offsets",
     "-D"..clink.argmatcher():addarg({"read", "skip"}),
     "--devices="..clink.argmatcher():addarg({"read", "skip"}),
     "-d"..clink.argmatcher():addarg({"read", "recurse", "skip"}),
@@ -133,6 +140,7 @@ clink.argmatcher("grep")
     "-r", "--recursive",
     "-R", "--dereference-recursive",
     "--include=", "--exclude=",
+    "--exclude-from="..(clink.argmatcher():addarg(clink.filematches)),
     "--exclude-dir=", "--include-dir=",
     -- Regex type
     "-E", "--extended-regexp",
@@ -149,5 +157,6 @@ clink.argmatcher("grep")
     "--label=",
     "-U", "--binary",
     "-z", "--null-data",
+    "-V",
     "--help", "--version",
 })

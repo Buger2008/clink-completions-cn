@@ -28,6 +28,8 @@ clink.argmatcher("ln")
     ["-b"] = { "备份每个现有的目标文件" },
     ["-S"] = { " arg", "指定备份后缀" },
     ["--suffix"] = { " arg", "指定备份后缀" },
+    ["-d"] = { "允许超级用户创建指向目录的硬链接" },
+    ["--directory"] = { "允许超级用户创建指向目录的硬链接" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -47,5 +49,6 @@ clink.argmatcher("ln")
     "-b",
     "-S"..(clink.argmatcher():addarg()),
     "--suffix="..(clink.argmatcher():addarg()),
+    "-d", "--directory",
     "--help", "--version",
 })

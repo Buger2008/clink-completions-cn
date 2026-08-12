@@ -32,6 +32,7 @@ clink.argmatcher("df")
     ["--print-type"] = { "在输出中显示文件系统类型" },
     ["-x"] = { " type", "排除指定类型的文件系统" },
     ["--exclude-type"] = { " type", "排除指定类型的文件系统" },
+    ["-v"] = { "忽略（兼容选项）" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -54,5 +55,6 @@ clink.argmatcher("df")
     "-T", "--print-type",
     "-x"..(clink.argmatcher():addarg({fromhistory=true})),
     "--exclude-type="..(clink.argmatcher():addarg({fromhistory=true})),
+    "-v",
     "--help", "--version",
 })

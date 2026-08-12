@@ -16,6 +16,10 @@ clink.argmatcher("env")
     ["--split-string"] = { "分割字符串处理多个参数" },
     ["-v"] = { "显示程序的详细调试信息" },
     ["--debug"] = { "显示程序的详细调试信息" },
+    ["--block-signal"] = { " sig", "阻塞将信号递交给子进程（如 INT, TERM, HUP）" },
+    ["--default-signal"] = { " sig", "将信号重置为默认处理" },
+    ["--ignore-signal"] = { " sig", "忽略将信号递交给子进程" },
+    ["--list-signal-handling"] = { "列出信号的处理方式并退出" },
     ["--help"] = { "显示帮助并退出" },
     ["--version"] = { "输出版本信息并退出" },
 })
@@ -28,5 +32,9 @@ clink.argmatcher("env")
     "--chdir="..(clink.argmatcher():addarg(clink.dirmatches)),
     "-S", "--split-string",
     "-v", "--debug",
+    "--block-signal="..(clink.argmatcher():addarg({fromhistory=true})),
+    "--default-signal="..(clink.argmatcher():addarg({fromhistory=true})),
+    "--ignore-signal="..(clink.argmatcher():addarg({fromhistory=true})),
+    "--list-signal-handling",
     "--help", "--version",
 })
