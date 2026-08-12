@@ -1,5 +1,5 @@
-[!\[Build status](https://github.com/vladimir-kotikov/clink-completions/actions/workflows/code-check.yml/badge.svg?branch=master)](https://github.com/vladimir-kotikov/clink-completions/actions/workflows/code-check.yml)
-[!\[codecov](https://codecov.io/gh/vladimir-kotikov/clink-completions/branch/master/graph/badge.svg)](https://codecov.io/gh/vladimir-kotikov/clink-completions)
+[![Build status](https://github.com/vladimir-kotikov/clink-completions/actions/workflows/code-check.yml/badge.svg?branch=master)](https://github.com/vladimir-kotikov/clink-completions/actions/workflows/code-check.yml)
+[![codecov](https://codecov.io/gh/vladimir-kotikov/clink-completions/branch/master/graph/badge.svg)](https://codecov.io/gh/vladimir-kotikov/clink-completions)
 
 
 
@@ -7,122 +7,119 @@
 
 # clink-completions
 
-Completion files for [Clink](https://github.com/chrisant996/clink) util. Bundled with [Cmder](https://github.com/cmderdev/cmder).
+面向 [Clink](https://github.com/chrisant996/clink) 工具的补全文件，随 [Cmder](https://github.com/cmderdev/cmder) 一同分发。
 
-# Requirements
+# 环境要求
 
-These completions requires Clink v0.4.3 or newer.
+这些补全需要 Clink v0.4.3 或更高版本。
 
-# Notes
+# 说明
 
-The `master` branch of this repo contains all available completions. If you lack some functionality, post a feature request.
+本仓库的 `master` 分支包含全部可用的补全。如果你缺少某些功能，请提交功能请求。
 
-Some completion generators in this bundle use features from the latest Clink distribution. If you get an error messages while using these completions, consider upgrading Clink to the latest version.
+本包中的部分补全生成器使用了最新版 Clink 发行版才有的特性。如果在使用这些补全时遇到错误信息，请考虑将 Clink 升级到最新版本。
 
-If this doesn't help, feel free to submit an issue.
+如果升级后问题依旧，欢迎提交 issue。
 
-# Installation and Updates
+# 安装与更新
 
-### If you use Cmder
+### 如果你使用 Cmder
 
-If you're using [Cmder](https://github.com/cmderdev/cmder), then the clink-completions are already bundled with it.
+如果你正在使用 [Cmder](https://github.com/cmderdev/cmder)，那么 clink-completions 已经随它一起打包了。
 
-Installing updates for Cmder also updates clink-completions, but not necessarily the latest clink-completions.
+更新 Cmder 会同时更新 clink-completions，但不一定是最新的 clink-completions。
 
-To update Cmder to use the very latest clink-completions, do this:
+要让 Cmder 使用最新的 clink-completions，请按以下步骤操作：
 
-1. Go to the [Releases](https://github.com/vladimir-kotikov/clink-completions/releases) page.
-2. Download the "Source code (zip)" file under "Assets" for the latest release.
-3. Extract the files to your Cmder `vendor\\clink-completions` directory.
-4. Start a new session of Cmder.
+1. 前往 [Releases](https://github.com/vladimir-kotikov/clink-completions/releases) 页面。
+2. 在最新版本的 "Assets" 下下载 "Source code (zip)" 文件。
+3. 将文件解压到你的 Cmder `vendor\clink-completions` 目录。
+4. 重新启动一个新的 Cmder 会话。
 
-Otherwise, here are a couple of ways to install the clink-completions scripts, when using a recent version of [Clink](https://github.com/chrisant996/clink):
+否则，在使用较新版本的 [Clink](https://github.com/chrisant996/clink) 时，还有以下几种安装 clink-completions 脚本的方式：
 
-### Using git
+### 使用 git 安装
 
-1. Make sure you have [git](https://www.git-scm.com/downloads) installed.
-2. Clone this repo into a new local directory via <code>git clone https://github.com/vladimir-kotikov/clink-completions <em>local\_directory</em></code> (replace <em>local\_directory</em> with the name of the directory where you want to install the scripts).
+1. 确保你已经安装了 [git](https://www.git-scm.com/downloads)。
+2. 通过 <code>git clone https://github.com/vladimir-kotikov/clink-completions <em>local_directory</em></code> 将本仓库克隆到一个新的本地目录（将 <em>local_directory</em> 替换为你想要安装脚本的目录名）。
 
-> \*\*Important:\*\* Avoid naming it `completions`, because that's a reserved subdirectory name in Clink.  See \[Completion directories](https://chrisant996.github.io/clink/clink.html#completion-directories) for more info.
+> **重要：** 不要命名为 `completions`，因为它是 Clink 中的保留子目录名。更多信息请参见 [补全目录](https://chrisant996.github.io/clink/clink.html#completion-directories)。
 
-3. Tell Clink to load scripts from the repo via <code>clink installscripts <em>full\_path\_to\_local\_directory</em></code>.
+3. 通过 <code>clink installscripts <em>full_path_to_local_directory</em></code> 让 Clink 从该仓库加载脚本。
 
-> \*\*Important:\*\* Specify the full path to the local directory (don't use a relative path).
+> **重要：** 请指定本地目录的完整路径（不要使用相对路径）。
 
-4. Start a new session of Clink.
+4. 重新启动一个新的 Clink 会话。
 
-Get updates using `git pull` and normal git workflow.
+之后通过 `git pull` 和常规的 git 工作流获取更新。
 
-### From the .zip file
+### 从 .zip 文件安装
 
-1. Go to the [Releases](https://github.com/vladimir-kotikov/clink-completions/releases) page.
-2. Download the "Source code (zip)" file under "Assets" for the latest release.
-3. Extract the files to a local directory.
+1. 前往 [Releases](https://github.com/vladimir-kotikov/clink-completions/releases) 页面。
+2. 在最新版本的 "Assets" 下下载 "Source code (zip)" 文件。
+3. 将文件解压到一个本地目录。
 
-> \*\*Important:\*\* Avoid naming it `completions`, because that's a reserved subdirectory name in Clink.  See \[Completion directories](https://chrisant996.github.io/clink/clink.html#completion-directories) for more info.
+> **重要：** 不要命名为 `completions`，因为它是 Clink 中的保留子目录名。更多信息请参见 [补全目录](https://chrisant996.github.io/clink/clink.html#completion-directories)。
 
-4. Tell Clink to load scripts from the repo via <code>clink installscripts <em>full\_path\_to\_local\_directory</em></code> (only when installing the first time; skip this step when updating).
+4. 通过 <code>clink installscripts <em>full_path_to_local_directory</em></code> 让 Clink 从该目录加载脚本（仅首次安装时需要；更新时跳过此步骤）。
 
-> \*\*Important:\*\* Specify the full path to the local directory (don't use a relative path).
+> **重要：** 请指定本地目录的完整路径（不要使用相对路径）。
 
-5. Start a new session of Clink.
+5. 重新启动一个新的 Clink 会话。
 
-Get updates by following the steps again, but skip step 4.
+之后获取更新时重复以上步骤，但跳过第 4 步。
 
-# Repo structure
+# 仓库结构
 
-Script files in the root directory are loaded when Clink starts.
+根目录下的脚本文件在 Clink 启动时加载。
 
-Scripts in the `completions\\` directory are not loaded until the associated command is actually used.  Most completion scripts could be located in the completions directory, except that older versions of Clink don't load scripts from the completions directory.
+`completions\` 目录下的脚本只有在实际使用到对应命令时才会被加载。大多数补全脚本都可以放在 completions 目录中，但旧版本的 Clink 不会从 completions 目录加载脚本。
 
-Scripts in the `modules\\` directory contain helper functions.  The `!init.lua` script (or `.init.lua` script) tells Clink about the modules and completions directories.
+`modules\` 目录下的脚本包含辅助函数。`!init.lua` 脚本（或 `.init.lua` 脚本）负责告诉 Clink modules 和 completions 目录的位置。
 
-Scripts in the `spec\\` directory are tests which the `busted` package can run.
+`spec\` 目录下的脚本是测试文件，可由 `busted` 包运行。
 
 
 
-# Development and contribution
+# 开发与贡献
 
-The new flow is single `master` branch for all more or less valuable changes. The `master` should be clean and show nice history of project. The bugfixes are made and land directly into `master`.
+新流程采用单一的 `master` 分支来管理所有有一定价值的改动。`master` 分支应当保持整洁，并展示清晰的项目历史。缺陷修复直接合并进 `master` 分支。
 
-Feature development should be done in a separate topic branch per feature. Submit a pull request for merging the feature into the `master` branch, and include a meaning commit description for the feature changes.
+功能开发应在独立的主题分支（topic branch）中进行，每个功能一个分支。提交拉取请求将功能合并进 `master` 分支，并为功能改动附上有意义的提交说明。
 
-Avoid reusing a topic branch after it's been merged into `master`, because reusing leads to unnecessary merge conflicts. The more the topic branch is reused, the harder it will become to accurately resolve the merge conflicts.
+主题分支在合并进 `master` 之后不要重复使用，因为重复使用会导致不必要的合并冲突。主题分支被复用得越多，准确解决合并冲突就越困难。
 
-The `dev` branch is volatile and should not be used by contributors.
+`dev` 分支不稳定，贡献者不应使用。
 
-# Test
+# 测试
 
-You will need `busted` package to be installed locally (to `lua\_modules` directory). To install it
-using Luarocks call `luarocks --lua-version 5.2 install --tree=lua\_modules busted`. You might also want to install
-`luacov` to get the coverage information.
+你需要在本机（`lua_modules` 目录）安装 `busted` 包。使用 Luarocks 安装：`luarocks --lua-version 5.2 install --tree=lua_modules busted`。你可能还想安装 `luacov` 来获取覆盖率信息。
 
-After installing call `test.bat` from repo root and watch tests passing. That's it.
+安装完成后，在仓库根目录运行 `test.bat` 并观察测试是否通过。就这么简单。
 
-### Getting `tests` to run on Windows
+### 在 Windows 上运行 `tests`
 
-> \[!IMPORTANT]
-> Clink and clink-completions use Lua \*\*5.2\*\*; be sure to download Lua 5.2 (not 5.4 or other versions).
+> [!IMPORTANT]
+> Clink 和 clink-completions 使用 Lua **5.2**；请务必下载 Lua 5.2（而不是 5.4 或其他版本）。
 
-**Prerequisites:**
+**前置条件：**
 
-1. Make a local luabin directory, for example `c:\\luabin`.
-2. `set PATH=%PATH%;c:\\luabin` to add your luabin directory to the system PATH.
-3. Install Lua 5.2 executables from [LuaBinaries](https://luabinaries.sourceforge.net/download.html) to your luabin directory.
-4. Download Lua 5.2 sources zip from [LuaBinaries](https://luabinaries.sourceforge.net/download.html), and extract the headers from its `include` subdirectory into `include\\lua\\5.2` under your luabin directory.
-5. Install [MinGW](https://sourceforge.net/projects/mingw/), which is needed because the luasystem luarock wants to build itself from scratch.
-6. Download [luacheck](https://github.com/lunarmodules/luacheck/releases) into your luabin directory.
-7. Download the [luarocks](https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows) executable files into your luabin directory.
-8. `luarocks --local config variables.lua c:\\luabin\\lua52.exe` to tell luarocks where to find your Lua binaries.
-9. `luarocks --lua-version 5.2 install busted` to install busted.
-10. `luarocks --lua-version 5.2 install luacov` to install luacov.
-11. `set PATH=%PATH%;%USERPROFILE%\\AppData\\Roaming\\luarocks\\bin` to add the luarocks bin directory to the system PATH, so that `busted` can be found and executed.
+1. 创建一个本地 luabin 目录，例如 `c:\luabin`。
+2. 执行 `set PATH=%PATH%;c:\luabin` 将 luabin 目录添加到系统 PATH。
+3. 从 [LuaBinaries](https://luabinaries.sourceforge.net/download.html) 下载 Lua 5.2 可执行文件到你的 luabin 目录。
+4. 从 [LuaBinaries](https://luabinaries.sourceforge.net/download.html) 下载 Lua 5.2 源码压缩包，并将其 `include` 子目录中的头文件解压到 luabin 目录下的 `include\lua\5.2`。
+5. 安装 [MinGW](https://sourceforge.net/projects/mingw/)，因为 luasystem luarock 需要从头编译自身。
+6. 将 [luacheck](https://github.com/lunarmodules/luacheck/releases) 下载到你的 luabin 目录。
+7. 将 [luarocks](https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows) 可执行文件下载到你的 luabin 目录。
+8. 执行 `luarocks --local config variables.lua c:\luabin\lua52.exe` 告诉 luarocks 你的 Lua 二进制文件在哪里。
+9. 执行 `luarocks --lua-version 5.2 install busted` 安装 busted。
+10. 执行 `luarocks --lua-version 5.2 install luacov` 安装 luacov。
+11. 执行 `set PATH=%PATH%;%USERPROFILE%\AppData\Roaming\luarocks\bin` 将 luarocks 的 bin 目录添加到系统 PATH，以便找到并执行 `busted`。
 
-That should get everything set up.
+完成以上步骤后环境就配置好了。
 
-**Running `tests`:**
+**运行 `tests`：**
 
-Make sure the PATH has your luabin directory and the luarocks bin directory (from steps 2 and 11 in the prerequisites above).
+确保 PATH 中包含 luabin 目录和 luarocks 的 bin 目录（即上面前置条件中的第 2 步和第 11 步）。
 
-Then run `tests` from the clink-completions repo root.
-
+然后在 clink-completions 仓库根目录下运行 `tests`。
